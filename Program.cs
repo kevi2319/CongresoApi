@@ -24,14 +24,14 @@ var conn =
     ?? Environment.GetEnvironmentVariable("DATABASE_URL");
 
 if (string.IsNullOrWhiteSpace(conn))
-    throw new InvalidOperationException("No se encontró cadena de conexión a PostgreSQL en POSTGRES_CONNECTION_STRING / DATABASE_URL / appsettings.");
-
-// Asegura SSL en producción (Render la requiere)
-if (!conn.Contains("sslmode", StringComparison.OrdinalIgnoreCase))
-    conn += (conn.Contains('?') ? "&" : "?") + "sslmode=require";
+    throw new InvalidOperationException(
+        "No se encontró cadena de conexión a PostgreSQL en POSTGRES_CONNECTION_STRING / DATABASE_URL / appsettings."
+    );
 
 // ---- EF Core (Npgsql) ----
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(conn));
+builder.Services.AddDbContext<AppDbContext>(opt =>
+    opt.UseNpgsql(conn)
+);
 
 // ---- MVC + Swagger ----
 builder.Services.AddControllers();
