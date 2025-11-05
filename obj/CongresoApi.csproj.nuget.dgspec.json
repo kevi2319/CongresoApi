@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kgome\\OneDrive\\Documents\\Escuela\\IDGS902\\Mena\\TareaJTW\\BackendJWTTarea\\CongresoApi\\CongresoApi.csproj": {}
+    "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\CongresoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kgome\\OneDrive\\Documents\\Escuela\\IDGS902\\Mena\\TareaJTW\\BackendJWTTarea\\CongresoApi\\CongresoApi.csproj": {
+    "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\CongresoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kgome\\OneDrive\\Documents\\Escuela\\IDGS902\\Mena\\TareaJTW\\BackendJWTTarea\\CongresoApi\\CongresoApi.csproj",
+        "projectUniqueName": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\CongresoApi.csproj",
         "projectName": "CongresoApi",
-        "projectPath": "C:\\Users\\kgome\\OneDrive\\Documents\\Escuela\\IDGS902\\Mena\\TareaJTW\\BackendJWTTarea\\CongresoApi\\CongresoApi.csproj",
+        "projectPath": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\CongresoApi.csproj",
         "packagesPath": "C:\\Users\\kgome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kgome\\OneDrive\\Documents\\Escuela\\IDGS902\\Mena\\TareaJTW\\BackendJWTTarea\\CongresoApi\\obj\\",
+        "outputPath": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -61,9 +61,9 @@
               "target": "Package",
               "version": "[9.0.10, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.10, )"
+              "version": "[9.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

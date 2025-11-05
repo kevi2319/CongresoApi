@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CongresoApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f285ab6052a80c1b93c0c2281e34657fac2e4b66")]
 [assembly: System.Reflection.AssemblyProductAttribute("CongresoApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CongresoApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
