@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -15,16 +16,16 @@ namespace CongresoApi.Migrations
                 name: "Participants",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nombre = table.Column<string>(type: "TEXT", maxLength: 80, nullable: false),
-                    Apellidos = table.Column<string>(type: "TEXT", maxLength: 80, nullable: false),
-                    Email = table.Column<string>(type: "TEXT", maxLength: 120, nullable: false),
-                    Twitter = table.Column<string>(type: "TEXT", maxLength: 30, nullable: true),
-                    Ocupacion = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
-                    AvatarUrl = table.Column<string>(type: "TEXT", maxLength: 250, nullable: true),
-                    TerminosAceptados = table.Column<bool>(type: "INTEGER", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Nombre = table.Column<string>(type: "character varying(80)", maxLength: 80, nullable: false),
+                    Apellidos = table.Column<string>(type: "character varying(80)", maxLength: 80, nullable: false),
+                    Email = table.Column<string>(type: "character varying(120)", maxLength: 120, nullable: false),
+                    Twitter = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: true),
+                    Ocupacion = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: true),
+                    AvatarUrl = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
+                    TerminosAceptados = table.Column<bool>(type: "boolean", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
