@@ -10,8 +10,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app ./
 
-# Render pasa automáticamente estas variables
+# Solo necesitas configurar el puerto, NO la connection string
 ENV ASPNETCORE_URLS=http://0.0.0.0:${PORT}
-ENV POSTGRES_CONNECTION_STRING=${POSTGRES_CONNECTION_STRING}
 
 ENTRYPOINT ["dotnet", "CongresoApi.dll"]
