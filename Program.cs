@@ -2,8 +2,8 @@
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ---- CORS (agrega aquí tus orígenes locales y, opcional, uno desde env) ----
-var frontendOrigin = Environment.GetEnvironmentVariable("FRONTEND_ORIGIN"); // opcional
+
+var frontendOrigin = Environment.GetEnvironmentVariable("FRONTEND_ORIGIN");
 builder.Services.AddCors(o => o.AddPolicy("front", p =>
 {
     p.WithOrigins(
@@ -17,11 +17,11 @@ builder.Services.AddCors(o => o.AddPolicy("front", p =>
         p.WithOrigins(frontendOrigin).AllowAnyHeader().AllowAnyMethod();
 }));
 
-// ---- Connection string: appsettings, POSTGRES_CONNECTION_STRING o DATABASE_URL ----
+
 var conn =
-    builder.Configuration.GetConnectionString("postgres")
-    ?? Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING")
-    ?? Environment.GetEnvironmentVariable("DATABASE_URL");
+    Environment.GetEnvironmentVariable("DATABASE_URL")
+    ?? builder.Configuration.GetConnectionString("postgres")
+    ?? Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
 
 if (string.IsNullOrWhiteSpace(conn))
     throw new InvalidOperationException(

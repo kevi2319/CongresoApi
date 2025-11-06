@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|c:\\users\\kgome\\onedrive\\documents\\github\\congresoapi\\controllers\\participantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|solutionrelative:controllers\\participantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|c:\\users\\kgome\\onedrive\\documents\\github\\congresoapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|c:\\users\\kgome\\onedrive\\documents\\github\\congresoapi\\dockerfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|solutionrelative:dockerfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|c:\\users\\kgome\\onedrive\\documents\\github\\congresoapi\\controllers\\participantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|solutionrelative:controllers\\participantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8EE8D601-696C-49B9-BAB5-26A1E5E3D51D}|CongresoApi.csproj|c:\\users\\kgome\\onedrive\\documents\\github\\congresoapi\\controllers\\dokerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -74,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "20251105004424_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Migrations\\20251105004424_InitialCreate.cs",
               "RelativeDocumentMoniker": "Migrations\\20251105004424_InitialCreate.cs",
@@ -82,25 +82,24 @@
               "RelativeToolTip": "Migrations\\20251105004424_InitialCreate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T21:25:22.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T21:25:22.809Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
               "ToolTip": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Dockerfile",
               "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-11-05T00:53:39.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CongresoApi.csproj",
               "DocumentMoniker": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\CongresoApi.csproj",
               "RelativeDocumentMoniker": "CongresoApi.csproj",
@@ -112,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Dockerfile.cs",
               "DocumentMoniker": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Dockerfile.cs",
               "RelativeDocumentMoniker": "Dockerfile.cs",
@@ -136,15 +135,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "ParticipantesController.cs",
               "DocumentMoniker": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Controllers\\ParticipantesController.cs",
               "RelativeDocumentMoniker": "Controllers\\ParticipantesController.cs",
               "ToolTip": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Controllers\\ParticipantesController.cs",
               "RelativeToolTip": "Controllers\\ParticipantesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwGYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T00:45:43.43Z"
+              "WhenOpened": "2025-11-05T00:45:43.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -184,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Infrastructure\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\AppDbContext.cs",
@@ -192,8 +192,7 @@
               "RelativeToolTip": "Infrastructure\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T00:39:15.871Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T00:39:15.871Z"
             },
             {
               "$type": "Document",
@@ -209,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -228,7 +227,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\kgome\\OneDrive\\Documents\\GitHub\\CongresoApi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAQwDsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T00:36:02.551Z",
               "EditorCaption": ""
