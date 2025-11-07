@@ -7,10 +7,9 @@ var allowedOrigins = new[]
 {
     "http://localhost:5173",
     "http://localhost:3000",
-    "https://congresapifront.netlify.app" // 👈 tu dominio de Netlify
+    "https://congresapifront.netlify.app"
 };
 
-// Si se define FRONTEND_ORIGIN en Render, también la agrega
 var frontendOrigin = Environment.GetEnvironmentVariable("FRONTEND_ORIGIN");
 if (!string.IsNullOrWhiteSpace(frontendOrigin))
 {
@@ -35,12 +34,8 @@ var conn =
 
 if (string.IsNullOrWhiteSpace(conn))
     throw new InvalidOperationException(
-        "❌ No se encontró cadena de conexión a PostgreSQL en POSTGRES_CONNECTION_STRING / DATABASE_URL / appsettings."
+        "❌ No se encontró cadena de conexión a PostgreSQL"
     );
-
-// Render usa SSL obligatorio; si falta, lo agregamos
-if (!conn.Contains("sslmode", StringComparison.OrdinalIgnoreCase))
-    conn += (conn.Contains('?') ? "&" : "?") + "sslmode=require";
 
 // ====== EF CORE (Npgsql) ======
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(conn));
