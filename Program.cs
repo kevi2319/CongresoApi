@@ -2,58 +2,73 @@
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-var frontendOrigin = Environment.GetEnvironmentVariable("FRONTEND_ORIGIN");
-builder.Services.AddCors(o => o.AddPolicy("front", p =>
+// ====== CONFIGURACIÓN DE CORS ======
+var allowedOrigins = new[]
 {
-    p.WithOrigins(
-        "http://localhost:5173",
-        "http://localhost:3000"
-    )
-    .AllowAnyHeader()
-    .AllowAnyMethod();
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://congresapifront.netlify.app" // 👈 tu dominio de Netlify
+};
 
-    if (!string.IsNullOrWhiteSpace(frontendOrigin))
-        p.WithOrigins(frontendOrigin).AllowAnyHeader().AllowAnyMethod();
-}));
+// Si se define FRONTEND_ORIGIN en Render, también la agrega
+var frontendOrigin = Environment.GetEnvironmentVariable("FRONTEND_ORIGIN");
+if (!string.IsNullOrWhiteSpace(frontendOrigin))
+{
+    allowedOrigins = allowedOrigins.Append(frontendOrigin).ToArray();
+}
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("front", policy =>
+    {
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
+// ====== CONEXIÓN A POSTGRES ======
 var conn =
-    Environment.GetEnvironmentVariable("DATABASE_URL")
-    ?? builder.Configuration.GetConnectionString("postgres")
-    ?? Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
+    Environment.GetEnvironmentVariable("DATABASE_URL") ??
+    builder.Configuration.GetConnectionString("postgres") ??
+    Environment.GetEnvironmentVariable("POSTGRES_CONNECTION_STRING");
 
 if (string.IsNullOrWhiteSpace(conn))
     throw new InvalidOperationException(
-        "No se encontró cadena de conexión a PostgreSQL en POSTGRES_CONNECTION_STRING / DATABASE_URL / appsettings."
+        "❌ No se encontró cadena de conexión a PostgreSQL en POSTGRES_CONNECTION_STRING / DATABASE_URL / appsettings."
     );
 
-// ---- EF Core (Npgsql) ----
-builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseNpgsql(conn)
-);
+// Render usa SSL obligatorio; si falta, lo agregamos
+if (!conn.Contains("sslmode", StringComparison.OrdinalIgnoreCase))
+    conn += (conn.Contains('?') ? "&" : "?") + "sslmode=require";
 
-// ---- MVC + Swagger ----
+// ====== EF CORE (Npgsql) ======
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(conn));
+
+// ====== MVC + SWAGGER ======
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// ====== SWAGGER ======
 app.UseSwagger();
 app.UseSwaggerUI();
 
+// ====== CORS ======
 app.UseCors("front");
 
-// ---- Migraciones automáticas al arrancar ----
+// ====== MIGRACIONES AUTOMÁTICAS ======
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     db.Database.Migrate();
 }
 
-// Atajo: redirige "/" a swagger
+// ====== ENDPOINTS ======
 app.MapGet("/", () => Results.Redirect("/swagger"));
-
 app.MapControllers();
+
+// ====== EJECUCIÓN ======
 app.Run();
