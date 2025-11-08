@@ -8,7 +8,7 @@ public class ParticipantesController : ControllerBase
     private readonly AppDbContext _db;
     public ParticipantesController(AppDbContext db) => _db = db;
 
-    // GET /api/listado  (con soporte de búsqueda: ?q=)
+
     [HttpGet("listado")]
     public async Task<ActionResult<IEnumerable<ParticipantListItemDto>>> GetListado([FromQuery] string? q = null)
     {
@@ -59,7 +59,7 @@ public class ParticipantesController : ControllerBase
         return Ok(dto);
     }
 
-    // POST /api/registro
+
     [HttpPost("registro")]
     public async Task<ActionResult<ParticipantDetailDto>> Registrar([FromBody] CreateParticipantDto dto)
     {
